@@ -9,10 +9,10 @@ def hello_world():
     return "Hello World !"
 
 
-@app.route('/hello')
-def hello():
-    return "hello world 2"
+def hello_world():
+    return 'hello world'
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.add_url_rule('/', 'hello', hello_world)
+    app.run(host='0.0.0.0', port=7070, debug=True)
